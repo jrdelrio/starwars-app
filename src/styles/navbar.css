@@ -1,0 +1,14 @@
+.main-logo{
+    width: 100px; 
+    height: 40px; 
+    object-fit: cover;
+    margin-left: 8vw;
+}
+.dropdown-toggle{
+    margin-right: 8vw
+}
+.fa-trash-can{
+    float: right;
+    font-size: 16px;
+    margin-top: 4px;
+}

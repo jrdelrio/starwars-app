@@ -1,0 +1,36 @@
+/*cards*/
+.card-text {
+    margin-bottom: 0
+}
+.card-body {
+    text-align: left;
+}
+.learnMoreButton {
+    background-color: white;
+    border: 1px #0d6efd solid;
+    margin-top: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px
+}
+
+.likeButton {
+    background-color: white !important;
+    border: 1px #ffc107 solid !important;
+    margin-top: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    float: right;
+    color: #ffc107 !important;
+}
+.selected {
+    background-color: #ffc107 !important;
+    color: black !important
+}
+
+label:hover,
+input,
+.fa-heart:hover {
+    background-color: #ffc107 !important;
+    color: black !important;
+    border: 1px #ffc107 solid !important;
+}

@@ -1,0 +1,18 @@
+/*secciones*/
+.sectionTitle {
+  color: #dc3545;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.col-3{
+  width: 18rem;
+  margin-right: 10px;    
+}
+.rowSection {
+  overflow-x: scroll;
+  width: 100%;
+}
+.text-center {
+  margin-right: 8vw;
+  margin-left: 8vw;
+}
