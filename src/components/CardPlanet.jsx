@@ -31,7 +31,7 @@ const CardPlanet = (props) => {
                     <p className="card-text"><b>Population:</b> {planet.population}</p>
                     <p className="card-text"><b>Terrain:</b> {planet.terrain}</p>
                     <div>
-                        <Link className='btn btn-outline-primary learnMoreButton' to={`/single/planets/${uid}`} >Learn more!</Link>
+                        <Link className='btn btn-outline-primary learnMoreButton' to={`/starwars-app/single/planets/${uid}`} >Learn more!</Link>
                         <button
                             className={`btn btn-outline-primary likeButton ${globalFavorites.includes(planet) ? "selected" : null}`}
                             onClick={(ev) => {

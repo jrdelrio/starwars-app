@@ -32,7 +32,7 @@ const CardCharacter = (props) => {
           <p className="card-text"><b>Eyes-color:</b> {char.eye_color}</p>
           <p className="card-text"><b>Hair-clor:</b> {char.hair_color}</p>
           <div>
-            <Link className='btn btn-outline-primary learnMoreButton' to={`/single/people/${uid}`} >Learn more!</Link>
+            <Link className='btn btn-outline-primary learnMoreButton' to={`/starwars-app/single/people/${uid}`} >Learn more!</Link>
             <button
               className={`btn btn-outline-primary likeButton ${globalFavorites.includes(char) ? "selected" : null}`}
               onClick={(ev) => {

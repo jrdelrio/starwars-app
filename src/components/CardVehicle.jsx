@@ -30,7 +30,7 @@ const CardVehicle = (props) => {
                     <p className="card-text"><b>Passengers:</b> {vehicle.passengers}</p>
                     <p className='card-text'><b>Manufacturer:</b> {vehicle.manufacturer}</p>
                     <div>
-                        <Link className='btn btn-outline-primary learnMoreButton' to={`/single/starships/${uid}`}>Learn more!</Link>
+                        <Link className='btn btn-outline-primary learnMoreButton' to={`/starwars-app/single/starships/${uid}`}>Learn more!</Link>
                         <button  
                                className={`btn btn-outline-primary likeButton ${globalFavorites.includes(vehicle) ? "selected" : null}`}
                                onClick={(ev) => {

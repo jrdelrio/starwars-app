@@ -20,8 +20,8 @@ const Layout = () => {
 				<ScrollToTop>
           <Navbar />
 					<Routes>
-						<Route path="/" element={ <Home /> } />
-						<Route path="/single/:type/:id" exact element={ <Single /> } />
+						<Route path="/starwars-app" element={ <Home /> } />
+						<Route path="/starwars-app/single/:type/:id" element={ <Single /> } />
 					</Routes>
           <Footer />
 				</ScrollToTop>

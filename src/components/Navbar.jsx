@@ -1,4 +1,4 @@
-import React, {useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext"; // trsaigo todos los datos y funciones definidas en appContext.js
 
@@ -9,7 +9,7 @@ export const Navbar = () => {
 	if (store.favorites != undefined){
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
+			<Link to="/starwars-app">
 				<img className='main-logo' src='https://www.freepnglogos.com/uploads/star-wars-logo-31.png' />
 			</Link>
 			<div className="ml-auto">
@@ -30,7 +30,7 @@ export const Navbar = () => {
 	)} else {
 		return (
 			<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
+			<Link to="/starwars-app">
 				<img className='main-logo' src='https://www.freepnglogos.com/uploads/star-wars-logo-31.png' />
 			</Link>
 			<div className="ml-auto">
