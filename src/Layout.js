@@ -10,24 +10,23 @@ import { Navbar } from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
 const Layout = () => {
-
   // const basename = process.env.BASENAME || "";
   const basename = "";
 
   return (
     <div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
+      <BrowserRouter basename={basename}>
+        <ScrollToTop>
           <Navbar />
-					<Routes>
-						<Route path="/starwars-app" element={ <Home /> } />
-						<Route path="/starwars-app/single/:type/:id" element={ <Single /> } />
-					</Routes>
+          <Routes>
+            <Route path="/starwars-app/" element={<Home />} />
+            <Route path="/starwars-app/single/:type/:id" element={<Single />} />
+          </Routes>
           <Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
+        </ScrollToTop>
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default injectContext(Layout);
