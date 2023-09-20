@@ -24,13 +24,28 @@
 }
 .selected {
     background-color: #ffc107 !important;
-    color: black !important
+    color: black !important;
 }
 
 label:hover,
 input,
+.likeButton:hover,
 .fa-heart:hover {
     background-color: #ffc107 !important;
     color: black !important;
     border: 1px #ffc107 solid !important;
+}
+
+.card img {
+    filter: grayscale(100%);
+    transition: filter 1.5s linear; /* 3-second transition to grayscale */
+}
+
+.card img:hover {
+    filter: none;
+    transition: filter 0s; /* Immediate transition to color while hovering */
+}
+
+.likeButton {
+    box-shadow: none !important;
 }
