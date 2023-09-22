@@ -1,60 +1,63 @@
 import React, { useEffect, useState, useContext } from "react";
-import CardCharacter from "../components/CardCharacter.jsx";
 import Card from "../components/Card.jsx";
 import { AppContext } from "../store/appContext.js";
 
 export const Home = () => {
+    const { store, actions } = useContext(AppContext);
+    const globalFavorites = store.favorites;
 
-	const { store, actions } = useContext(AppContext);
-	const globalFavorites = store.favorites
+    const [masterCharacters, setMasterCharacters] = useState([]);
+    const [masterPlanets, setMasterPlanets] = useState([]);
+    const [masterVehicles, setMasterVehicles] = useState([]);
+    const [masterFilms, setMasterFilms] = useState([]);
+    const [masterSpecies, setMasterSpecies] = useState([]);
+    const [masterStarships, setMasterStarships] = useState([]);
 
-	// define all states
-	const [masterCharacters, setMasterCharacters] = useState([]);
-	const [masterPlanets, setMasterPlanets] = useState([]);
-	const [masterVehicles, setMasterVehicles] = useState([]);
-	const [masterFilms, setMasterFilms] = useState([]);
-	const [masterSpecies, setMasterSpecies] = useState([]);
-	const [masterStarships, setMasterStarships] = useState([]);
+    const fetchItems = ['people', 'planets', 'vehicles', 'films', 'species', 'starships'];
 
-	const fetchItems = ['people', 'planets', 'vehicles', 'films', 'species', 'starships'];
+    useEffect(() => {
+        const errorPlanets = [
+            1, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
+            33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+            46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58,
+            59, 60
+        ];
 
-	// fetch de la data de personajes
-	useEffect(() => {
-		Promise.all([
-			fetch(`https://www.swapi.tech/api/${fetchItems[0]}?limit=0&page=0`),
-			fetch(`https://www.swapi.tech/api/${fetchItems[1]}?limit=0&page=0`),
-			fetch(`https://www.swapi.tech/api/${fetchItems[2]}?limit=0&page=0`),
-			fetch(`https://www.swapi.tech/api/${fetchItems[3]}?limit=0&page=0`),
-			fetch(`https://www.swapi.tech/api/${fetchItems[4]}?limit=0&page=0`),
-			fetch(`https://www.swapi.tech/api/${fetchItems[5]}?limit=0&page=0`)
-		])
-			.then(responses => {
-				return Promise.all(responses.map(res => {
-					if (!res.ok) throw new Error('Network response was not ok');
-					return res.json();
-				}));
-			})
-			.then(data => {
-				const getUpdatedData = (items, path) => items.map(item => ({
-					...item,
-					image: `https://starwars-visualguide.com/assets/img/${path}/${item.uid}.jpg`
-				}));
+        const errorVehicles = [
+            44, 45, 46, 50, 51, 53, 54, 55, 56, 57, 60, 62, 67,
+            69, 70, 71, 72, 73, 76
+        ];
 
-				setMasterCharacters(getUpdatedData(data[0].results, 'characters'));
-				setMasterPlanets(getUpdatedData(data[1].results, 'planets'));
-				setMasterVehicles(getUpdatedData(data[2].results, 'vehicles'));
-				setMasterFilms(getUpdatedData(data[3].result, 'films'));
-				setMasterSpecies(getUpdatedData(data[4].results, 'species'));
-				setMasterStarships(getUpdatedData(data[5].results, 'starships'));
-			})
-			.catch(error => {
-				console.error("There was a problem with the fetch operation:", error.message);
-			});
-	}, []);
+        const errorStarships = [
+            2, 3, 17, 32, 49, 52, 58, 59, 61, 63, 64, 65, 66,
+            68, 74, 75
+        ];
 
-	useEffect(() => {
-		// console.log(masterCharacters);
-	}, [masterCharacters]);
+        const getUpdatedData = (items, path, errorArray = []) => 
+            items
+                .filter(item => !errorArray.includes(Number(item.uid)))
+                .map(item => ({
+                    ...item,
+                    image: `https://starwars-visualguide.com/assets/img/${path}/${item.uid}.jpg`
+                }));
+
+        Promise.all(fetchItems.map(item => fetch(`https://www.swapi.tech/api/${item}?limit=0&page=0`)))
+            .then(responses => Promise.all(responses.map(res => {
+                if (!res.ok) throw new Error('Network response was not ok');
+                return res.json();
+            })))
+            .then(data => {
+                setMasterCharacters(getUpdatedData(data[0].results, 'characters'));
+                setMasterPlanets(getUpdatedData(data[1].results, 'planets', errorPlanets));
+                setMasterVehicles(getUpdatedData(data[2].results, 'vehicles', errorVehicles));
+                setMasterFilms(getUpdatedData(data[3].result, 'films')); // Note: 'result' is used here. Make sure it's correct.
+                setMasterSpecies(getUpdatedData(data[4].results, 'species'));
+                setMasterStarships(getUpdatedData(data[5].results, 'starships', errorStarships));
+            })
+            .catch(error => {
+                console.error("There was a problem with the fetch operation:", error.message);
+            });
+    }, []);
 
 
 
@@ -85,14 +88,21 @@ export const Home = () => {
 
 					{/*planets section*/}
 					<section className="planetsSection">
-						<h2 className="sectionTitle">Planets</h2>
-						<div className="row flex-row flex-nowrap rowSection">
-							{masterPlanets.map((planet, index) => (
-								<div className="col-3" key={index}>
-									<Card className="CardPlanet" name={planet.name} url={planet.url} image={planet.image} uid={planet.uid} type="planet" />
+						{masterPlanets.filter(planet => planet.uid !== 4 && planet.uid !== 5).length > 0 && (
+							<>
+								<h2 className="sectionTitle">Planets</h2>
+								<div className="row flex-row flex-nowrap rowSection">
+									{masterPlanets
+										.filter(planet => planet.uid !== 4 && planet.uid !== 5)
+										.map((planet, index) => (
+											<div className="col-3" key={index}>
+												<Card className="CardPlanet" name={planet.name} url={planet.url} image={planet.image} uid={planet.uid} type="planet" />
+											</div>
+										))
+									}
 								</div>
-							))}
-						</div>
+							</>
+						)}
 					</section>
 
 					{/*vehicles section*/}

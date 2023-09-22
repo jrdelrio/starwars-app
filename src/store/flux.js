@@ -2,6 +2,12 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       favorites: [],
+
+      errorImages: {
+        planets: [],
+        starships: [],
+        vehicles: [],
+      },
     },
 
     actions: {
@@ -10,6 +16,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ favorites: [...store.favorites, newFavorite] });
         console.log(`Added to favorites item ${newFavorite.name}!`);
       },
+
+      // addErrorImages: (type, uid) => {
+      //   const store = getStore();
+      //   console.log(store)
+      //   if (type == "planet"){setStore({ errorImages.planets: [...store.errorImages.planets, uid]})}
+      //   setStore({errorImages: []})
+      // },
 
       deleteFavorite: (item) => {
         const store = getStore();
