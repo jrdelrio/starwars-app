@@ -1,7 +1,7 @@
 /*secciones*/
 .sectionTitle {
   color: #dc3545;
-  padding-bottom: 20px;
+  margin-bottom: 15px;
   text-align: left;
 }
 .col-3{
@@ -15,4 +15,8 @@
 .text-center {
   margin-right: 8vw;
   margin-left: 8vw;
+}
+
+section {
+  margin-bottom: 20px;
 }
