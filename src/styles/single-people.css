@@ -1,0 +1,265 @@
+/* .imageSingle{
+    width: 430px; 
+    height: 350px; 
+    object-fit: cover;
+}
+.single-view-contentBodySingle{
+    align-content: center;
+    text-align: center;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+.mb-3{
+    border: none
+} */
+
+.single-wrapper h1 {
+  color: white;
+}
+
+
+
+ /*
+.wrapper {
+    margin-top: 10vh;
+    background-color: white;
+    color: black;
+}
+
+.wrapper h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.single-view-content {
+    margin: 0 5vw;
+    display: flex;
+}
+
+.single-view-content img {
+    margin-bottom: 30px;
+    border-radius: 5%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+html, body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.single-view-content {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.single-view-content h1 {
+  text-align: center;
+}
+
+.single-view-content .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.single-view-content.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+.single-view-content:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.single-view-content .additional .user-single-view-content {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.single-view-content .additional .user-single-view-content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);
+}
+
+.single-view-content .additional .user-single-view-content .level,
+.single-view-content .additional .user-single-view-content .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.single-view-content .additional .user-single-view-content .points {
+  top: 85%;
+}
+
+.single-view-content .additional .user-single-view-content svg {
+  top: 50%;
+}
+
+.single-view-content .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.single-view-content .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.single-view-content.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.single-view-content .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.single-view-content.green .additional .coords {
+  color: #325C46;
+}
+
+.single-view-content .additional .coords span + span {
+  float: right;
+}
+
+.single-view-content .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.single-view-content.green .additional .stats {
+  color: #325C46;
+}
+
+.single-view-content .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.single-view-content .additional .stats i {
+  display: block;
+}
+
+.single-view-content .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.single-view-content .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.single-view-content .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.single-view-content .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.single-view-content .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+
+*/
+/* .wb {
+  border: white 2px solid;
+} */
+
+.single-wrapper {
+  display: flex;
+}
+
+.single-image img {
+  margin: 70px 50px 0 70px;
+}
+
+.single-description {
+  margin-left: 30px;
+  width: 80%;
+}
+
+.single-description p {
+  margin-bottom: 0;
+  color: white;
+}
+
+.single-description h1 {
+  margin-bottom: 40px;
+}
+
+.single-features {
+  margin-left: 20px;
+  color: white;
+}
+
+.single-features .row .col-4{
+ font-size: 28px;
+ margin-bottom: 15px;
+}
+
+.single-features .row .col-8{
+  font-size: 28px;
+  margin-bottom: 15px;
+ }
+
+

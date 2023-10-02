@@ -4,6 +4,7 @@ import ScrollToTop from "./components/scrollToTop";
 
 import { Home } from "./views/home.jsx";
 import { Single } from "./views/single.jsx";
+import { SinglePeople } from "./views/single-people";
 import injectContext from "./store/appContext.js";
 
 import { Navbar } from "./components/Navbar.jsx";
@@ -20,7 +21,7 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/single/:type/:id" element={<Single />} />
+            <Route path="/single/:type/:id" element={<SinglePeople />} />
           </Routes>
           <Footer />
         </ScrollToTop>

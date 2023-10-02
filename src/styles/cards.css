@@ -31,9 +31,13 @@ label:hover,
 input,
 .likeButton:hover,
 .fa-heart:hover {
-    background-color: #ffc107 !important;
+    /* background-color: #ffc107 !important; */
     color: black !important;
-    border: 1px #ffc107 solid !important;
+    /* border: 1px #ffc107 solid !important; */
+}
+
+.likeButton:hover{
+    transform: scale(1.1);
 }
 
 .card img {
@@ -48,4 +52,13 @@ input,
 
 .likeButton {
     box-shadow: none !important;
+}
+
+.likeButton i:hover {
+    padding: none;
+}
+
+.card:hover{
+
+    transform: scale(1.01);
 }

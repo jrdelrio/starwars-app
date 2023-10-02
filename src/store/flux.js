@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
         setStore({ favorites: [...store.favorites, newFavorite] });
         console.log(`Added to favorites item ${newFavorite.name}!`);
+        console.log(store.favorites)
       },
 
       // addErrorImages: (type, uid) => {

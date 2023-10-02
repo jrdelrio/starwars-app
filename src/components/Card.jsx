@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
 import { AppContext } from '../store/appContext.js';
 import { Link } from "react-router-dom";
 
@@ -18,13 +19,11 @@ const Card = (props) => {
                 src={image}
                 className="card-img-top"
                 alt="card-image"
-                // onError={handleImageError(type, uid)}
             />
-
             <div className="card-body">
                 <h4>{name}</h4>
-                {/* <div>
-                    <Link className='btn btn-outline-primary learnMoreButton' to={`/single/people/${uid}`} >Learn more!</Link>
+                <div>
+                    <Link className='btn btn-outline-primary learnMoreButton' to={`/single/${type}/${uid}`} >Learn more!</Link>
                     <button
                         className={`btn btn-outline-primary likeButton ${globalFavorites.includes(name) ? "selected" : null}`}
                         onClick={(ev) => {
@@ -38,7 +37,7 @@ const Card = (props) => {
                         }
                         }><i className="fa-regular fa-heart"></i>
                     </button>
-                </div> */}
+                </div>
             </div>
         </div>
     )

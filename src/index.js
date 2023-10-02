@@ -5,10 +5,11 @@ import "./styles/sections.css";
 import "./styles/cards.css";
 import "./styles/planet-section.css";
 import "./styles/navbar.css";
-import "./styles/singles.css";
-import "./styles/single-footer.css";
+import "./styles/single-people.css";
+// import "./styles/single-footer.css";
 import "./styles/footer.css";
 import "./styles/general.css";
+import "./styles/single-people.css";
 
 
 import Layout from "./Layout";
